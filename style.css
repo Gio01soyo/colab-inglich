@@ -1,10 +1,11 @@
 :root {
-  --color-primario: #4f46e5;
-  --color-secundario: #6366f1;
-  --fondo: linear-gradient(to right, #e0e7ff, #f0f4ff);
-  --texto: #1f2937;
+  --color-primario: #ff4d88;
+  --color-secundario: #00ffe1;
+  --color-acento: #ffee00;
+  --fondo: linear-gradient(to right, #1a1a1a, #2e2e2e);
+  --texto: #f4f4f4;
   --blanco: #ffffff;
-  --sombra: rgba(0, 0, 0, 0.1);
+  --sombra: rgba(0, 255, 225, 0.2);
   --fuente: 'Poppins', sans-serif;
 }
 
@@ -30,6 +31,7 @@ header {
   padding: 6rem 2rem 4rem;
   background: var(--color-primario);
   color: var(--blanco);
+  box-shadow: 0 0 40px var(--color-secundario);
   position: relative;
   overflow: hidden;
 }
@@ -50,18 +52,20 @@ header p {
   display: inline-block;
   margin-top: 2rem;
   padding: 0.75rem 2rem;
-  background: var(--blanco);
-  color: var(--color-primario);
+  background: var(--color-secundario);
+  color: #000;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
   animation: fadeIn 2.5s ease;
+  box-shadow: 0 0 12px var(--color-acento);
 }
 
 .boton:hover {
-  background: #dbeafe;
+  background: var(--color-acento);
   transform: scale(1.05);
+  box-shadow: 0 0 18px var(--color-secundario);
 }
 
 main {
@@ -80,24 +84,26 @@ main {
 }
 
 .tarjeta {
-  background: var(--blanco);
+  background: #1a1a1a;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 10px 20px var(--sombra);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 255, 225, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s forwards;
+  border: 2px solid transparent;
 }
 
 .tarjeta:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 30px var(--sombra);
+  box-shadow: 0 0 25px var(--color-secundario);
+  border: 2px solid var(--color-acento);
 }
 
 .tarjeta h2 {
   margin-bottom: 1rem;
-  color: var(--color-primario);
+  color: var(--color-acento);
 }
 
 .img-box {
@@ -109,22 +115,23 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(255, 78, 128, 0.25);
 }
 
 video {
   max-width: 100%;
   margin-top: 1rem;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 255, 225, 0.25);
 }
 
 footer {
   text-align: center;
   padding: 2rem;
-  background: #e0e7ff;
-  color: #4b5563;
+  background: #111;
+  color: #bbb;
   font-size: 0.9rem;
+  border-top: 2px solid var(--color-acento);
   animation: fadeIn 3s ease;
 }
 
