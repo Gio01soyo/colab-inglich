@@ -1,7 +1,7 @@
 :root {
-  --color-primario: #2e8fff;
-  --color-secundario: #00ffe1;
-  --color-acento: #ffee00;
+  --color-primario: #2e8fff; /* Azul eléctrico profundo */
+  --color-secundario: #00ffe1; /* Cian eléctrico */
+  --color-acento: #ffee00;     /* Amarillo digital */
   --fondo: linear-gradient(to right, #1a1a1a, #2e2e2e);
   --texto: #f4f4f4;
   --blanco: #ffffff;
@@ -115,7 +115,7 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  box-shadow: 0 5px 15px rgba(255, 78, 128, 0.25);
+  box-shadow: 0 5px 15px rgba(46, 143, 255, 0.25);
 }
 
 video {
