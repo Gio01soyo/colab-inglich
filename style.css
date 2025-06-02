@@ -5,6 +5,7 @@
   --texto: #1f2937;
   --blanco: #ffffff;
   --sombra: rgba(0, 0, 0, 0.1);
+  --fuente: 'Poppins', sans-serif;
 }
 
 * {
@@ -14,30 +15,35 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--fuente);
   background: var(--fondo);
   color: var(--texto);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
 }
 
 header {
   text-align: center;
-  padding: 5rem 2rem 3rem;
+  padding: 6rem 2rem 4rem;
   background: var(--color-primario);
   color: var(--blanco);
+  position: relative;
+  overflow: hidden;
 }
 
 header h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
+  animation: slideInDown 1s ease-out;
 }
 
 header p {
   font-size: 1.25rem;
   opacity: 0.9;
+  animation: fadeIn 2s ease;
 }
 
 .boton {
@@ -50,6 +56,7 @@ header p {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s, transform 0.2s;
+  animation: fadeIn 2.5s ease;
 }
 
 .boton:hover {
@@ -66,10 +73,10 @@ main {
 
 .tarjetas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
 }
 
 .tarjeta {
@@ -78,6 +85,9 @@ main {
   border-radius: 1rem;
   box-shadow: 0 10px 20px var(--sombra);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
 }
 
 .tarjeta:hover {
@@ -90,10 +100,62 @@ main {
   color: var(--color-primario);
 }
 
+.img-box {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+video {
+  max-width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
 footer {
   text-align: center;
   padding: 2rem;
   background: #e0e7ff;
   color: #4b5563;
   font-size: 0.9rem;
+  animation: fadeIn 3s ease;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
