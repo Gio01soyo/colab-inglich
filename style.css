@@ -1,5 +1,5 @@
 :root {
-  --color-primario: #9b5de5
+  --color-primario: #9b5de5;
   --color-secundario: #00ffe1; /* Cian eléctrico */
   --color-acento: #ffee00;     /* Amarillo digital */
   --fondo: linear-gradient(to right, #1a1a1a, #2e2e2e);
@@ -26,25 +26,50 @@ body {
   scroll-behavior: smooth;
 }
 
+/* === PORTADA CYBERPUNK === */
 header {
-  text-align: center;
-  padding: 6rem 2rem 4rem;
-  background: var(--color-primario);
-  color: var(--blanco);
-  box-shadow: 0 0 40px var(--color-secundario);
+  background-image: url('https://i.imgur.com/WK9sHkZ.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  box-shadow: 0 0 50px var(--color-secundario);
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Capa oscura */
+  z-index: 1;
+}
+
+header h1,
+header p,
+.boton {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  color: var(--blanco);
+  animation: fadeIn 2s ease;
 }
 
 header h1 {
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px var(--color-acento);
   animation: slideInDown 1s ease-out;
 }
 
 header p {
   font-size: 1.25rem;
   opacity: 0.9;
+  margin-top: 1rem;
   animation: fadeIn 2s ease;
 }
 
@@ -135,7 +160,7 @@ footer {
   animation: fadeIn 3s ease;
 }
 
-/* Animations */
+/* === Animations === */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
