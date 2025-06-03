@@ -1,193 +1,55 @@
-:root {
-  --color-primario: #9b5de5;
-  --color-secundario: #00ffe1; /* Cian eléctrico */
-  --color-acento: #ffee00;     /* Amarillo digital */
-  --fondo: linear-gradient(to right, #1a1a1a, #2e2e2e);
-  --texto: #f4f4f4;
-  --blanco: #ffffff;
-  --sombra: rgba(0, 255, 225, 0.2);
-  --fuente: 'Poppins', sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
 body {
-  font-family: var(--fuente);
-  background: var(--fondo);
-  color: var(--texto);
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/40288/p5-bg.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
-/* === PORTADA CYBERPUNK === */
-header {
-  background-image: url('https://i.imgur.com/WK9sHkZ.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+.container {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100vh; /* Asegura que el contenedor cubra toda la pantalla */
   overflow: hidden;
-  box-shadow: 0 0 50px var(--color-secundario);
 }
 
-header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Capa oscura */
-  z-index: 1;
-}
-
-header h1,
-header p,
-.boton {
-  z-index: 2;
+.joker {
   position: relative;
-  text-align: center;
-  color: var(--blanco);
-  animation: fadeIn 2s ease;
-}
-
-header h1 {
-  font-size: 3rem;
-  text-shadow: 0 0 20px var(--color-acento);
-  animation: slideInDown 1s ease-out;
-}
-
-header p {
-  font-size: 1.25rem;
-  opacity: 0.9;
-  margin-top: 1rem;
-  animation: fadeIn 2s ease;
-}
-
-.boton {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 2rem;
-  background: var(--color-secundario);
-  color: #000;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-  animation: fadeIn 2.5s ease;
-  box-shadow: 0 0 12px var(--color-acento);
-}
-
-.boton:hover {
-  background: var(--color-acento);
-  transform: scale(1.05);
-  box-shadow: 0 0 18px var(--color-secundario);
-}
-
-main {
-  flex: 1;
-  padding: 4rem 2rem;
-  display: grid;
-  place-items: center;
-}
-
-.tarjetas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
   width: 100%;
-  max-width: 1100px;
-}
-
-.tarjeta {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 20px rgba(0, 255, 225, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
-  border: 2px solid transparent;
-}
-
-.tarjeta:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px var(--color-secundario);
-  border: 2px solid var(--color-acento);
-}
-
-.tarjeta h2 {
-  margin-bottom: 1rem;
-  color: var(--color-acento);
-}
-
-.img-box {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-img {
-  max-width: 100%;
   height: auto;
-  border-radius: 6px;
-  box-shadow: 0 5px 15px rgba(46, 143, 255, 0.25);
+  z-index: 1;
+  display: block;
 }
 
-video {
-  max-width: 100%;
-  margin-top: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 255, 225, 0.25);
+.selector {
+  position: absolute;
+  top: 26.5%;
+  left: 50%;
+  width: 20%;
+  height: 8%;
+  transform: translate(-50%, -50%);
+  transition: transform 50ms;
+  z-index: 10;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #111;
-  color: #bbb;
-  font-size: 0.9rem;
-  border-top: 2px solid var(--color-acento);
-  animation: fadeIn 3s ease;
+.red {
+  fill: #ff0022;
 }
 
-/* === Animations === */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.blue {
+  fill: #1cfeff;
+  mix-blend-mode: screen; /* Solo en la capa superior para el efecto */
 }
 
-@keyframes slideInDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 20;
+  display: block;
 }
