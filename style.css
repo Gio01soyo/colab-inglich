@@ -1,0 +1,55 @@
+/* style.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/40288/p5-bg.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Asegura que el contenedor cubra toda la pantalla */
+  overflow: hidden;
+}
+
+.joker {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  display: block;
+}
+
+.selector {
+  position: absolute;
+  top: 26.5%;
+  left: 50%;
+  width: 20%;
+  height: 8%;
+  transform: translate(-50%, -50%);
+  transition: transform 50ms;
+  z-index: 10;
+}
+
+.red {
+  fill: #ff0022;
+}
+
+.blue {
+  fill: #1cfeff;
+  mix-blend-mode: screen; /* Solo en la capa superior para el efecto */
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 20;
+  display: block;
+}
